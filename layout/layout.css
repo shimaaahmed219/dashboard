@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    background-color: #9fa1a1;
+    margin: 0;
+    
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 270px;
+    background-color: #f7f7f7;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 1;
+}
+
+.sidebar img {
+    width: 120px;
+    margin-bottom: 40px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu-item i {
+    margin-right: 15px;
+}
+
+.menu-item:hover {
+    background-color: #ececec;
+}
+
+.categories {
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.dropdown-icon {
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.dropdown-menu a {
+    padding: 5px 0 5px 30px;
+    color: #666;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ececec;
+}
+
+.open .dropdown-menu {
+    display: flex;
+}
+
+.open .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    background-color: #f1f3f4;
+    position: relative;
+    z-index: 0;
+}
+
+
+nav {
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+
+    
+    top: 0; /* Ensure it sticks to the top */
+    width: 100%; /* Make sure it spans the full width */
+    z-index: 1; /* Ensure it stays on top of other content */
+    
+    
+  }
+
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav i {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    justify-content: flex-end;
+    width: 24px;
+
+    font-size: 18px;
+    margin-left: 5px;
+    cursor: pointer;
+    
+
+  }
+.add-product-btn {
+    background-color: #333;
+    color: #fff;
+    padding:10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    width: 230px;
+}
+
+.add-product-btn i {
+    margin-right: 20px;
+}
+
+.add-product-btn:hover {
+    background-color: #555;
+}
+
+
