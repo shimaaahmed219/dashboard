@@ -1,0 +1,16 @@
+body {
+    background-color: #f8f9fa;
+  }
+  
+  .card {
+    border-radius: 10px;
+  }
+  
+  .btn-group .btn {
+    border-radius: 0;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #e8f5e9;
+  }
+  
