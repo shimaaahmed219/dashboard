@@ -1,0 +1,40 @@
+body{
+  background-color: #2323212b;
+}
+.iconDots {
+  background-color: #2323210d;
+  padding: 10px;
+  border-radius: 15%;
+  color: #232321;
+}
+.bigCard {
+  background: #fafafa;
+  border: #fafafa;
+  border-radius: 15px;
+  padding: 3%;
+}
+.smallCard {
+  background-color: #fafafa;
+  border: 0.75px solid #2323214d;
+  border-radius: 8px;
+  padding:0px 16px ;
+}
+.progress{
+  height:3px;
+  width: 30px !important;
+}
+.progress-bar {
+  background-color:  #FFA52F
+}
+i{color: #FFA52F;}
+.pagesNum .btn-outline-secondary{
+  color: #000;
+  border: #00000076 solid 1px;
+}
+.iconPls{ 
+  border: #fff solid 1px;
+  color: #fff;
+   border-radius: 50%;
+   padding: 3px;
+   margin-right: 10px;
+}
