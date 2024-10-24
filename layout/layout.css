@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,9 +9,9 @@ body {
     font-family: Arial, sans-serif;
     height: 100vh;
     display: flex;
-    background-color: #9fa1a1;
+    background-color: #2c8080;
     margin: 0;
-    
+    overflow: hidden; /* Prevent scroll if modal is open */
 }
 
 /* Sidebar Styling */
@@ -24,7 +25,8 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    z-index: 1;
+    z-index: 10;
+    height: 100%;
 }
 
 .sidebar img {
@@ -85,14 +87,56 @@ body {
 
 /* Main Content Styling */
 .main-content {
-    margin-left: 250px;
+    margin-left: 270px; /* Matches the width of the sidebar */
     padding: 20px;
-    width: calc(100% - 250px);
+    width: calc(100% - 270px); /* Takes the remaining width */
     background-color: #f1f3f4;
     position: relative;
     z-index: 0;
 }
 
+/* Product Section Styling */
+.product-section {
+    padding: 50px;
+    background-color: white;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Header Section with Flexbox */
+.header-section {
+    display: flex;
+    justify-content: space-between; /* Pushes items to opposite sides */
+    align-items: center; /* Vertically centers items */
+    margin-bottom: 20px;
+}
+
+header-section h1 {
+    margin: 0;
+}
+
+/* Add New Product Button Styling */
+#add-product-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+#add-product-btn i {
+    margin-right: 10px;
+}
+
+#add-product-btn:hover {
+    background-color: #555;
+}
 
 nav {
     background-color: #f7f7f7;
@@ -100,61 +144,147 @@ nav {
     display: flex;
     justify-content: space-between;
     height: 80px;
+    position: fixed; /* Stick the navbar */
+    top: 0;
+    left: 270px; /* Align with sidebar */
+    width: calc(100% - 270px); /* Full width minus sidebar */
+    z-index: 1;
+}
 
-    
-    top: 0; /* Ensure it sticks to the top */
-    width: 100%; /* Make sure it spans the full width */
-    z-index: 1; /* Ensure it stays on top of other content */
-    
-    
-  }
-
-  
-  nav ul {
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    
-  }
-  
-  nav li {
+}
+
+nav li {
     margin-right: 20px;
-  }
-  
-  nav i {
+}
+
+nav i {
     text-decoration: none;
     color: #333;
     font-weight: bold;
     justify-content: flex-end;
     width: 24px;
-
     font-size: 18px;
     margin-left: 5px;
     cursor: pointer;
-    
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* Enable scrolling for the modal */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    margin-right: 100px;
+    border: 1px solid #888;
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 70%; /* Increase width to better match the design */
+    display: grid;
+    grid-template-rows: 2fr 1fr; /* Two-thirds form, one-third gallery */
+    gap: 20px;
+}
+
+/* Form Styles */
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: calc(50% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 10px); /* Adjust to fit two inputs per row */
+  }
+
+  .form-field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+
+  textarea {
+    height: 100px;
+  }
+
+  .form-right {
+    width: 40%;
+    margin-left: auto;
+  }
+
+  .gallery {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    width:350px;
 
   }
-.add-product-btn {
-    background-color: #333;
-    color: #fff;
-    padding:10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+
+  .gallery img {
+    width: 100%;
+    max-width: 150px;
+    margin: 10px;
+  }
+
+  .buttons {
     display: flex;
-    align-items: center;
-    width: 230px;
-}
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 10px;
+  }
 
-.add-product-btn i {
-    margin-right: 20px;
-}
+  .buttons button {
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-.add-product-btn:hover {
-    background-color: #555;
-}
+  .buttons .delete {
+    background-color: #f7f5f5;
+    color: rgb(68, 66, 66);
+    padding: 10px;
+  }
 
-
+  .buttons .submit {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+  }

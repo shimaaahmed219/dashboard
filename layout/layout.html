@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar Example</title>
+    <title>Dashboard</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="layout.css">
 </head>
+
 <body>
-     <!-- Sidebar -->
-     <div class="sidebar">
+    <!-- Sidebar -->
+    <div class="sidebar">
         <img src="logo.png" alt="Logo">
 
         <a href="#" class="menu-item">
@@ -39,8 +41,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Main Content -->
     <div class="main-content">
 
         <!-- nav bar Section -->
@@ -48,17 +48,90 @@
         <nav>
             <h1></h1>
             <ul>
-              <li><i class="fas fa-search"></i></li>
-              <li><i class="fas fa-bell"></i></li>
-             
+                <li><i class="fas fa-search"></i></li>
+                <li><i class="fas fa-bell"></i></li>
+
             </ul>
-          </nav>
-        
+        </nav>
+        <!-- All Products Section -->
+        <div class="product-section">
+            <div class="header-section">
+                <h1>All Products</h1>
+                <button id="add-product-btn"><i class="fas fa-plus"></i>Add New Product</button>
+            </div>
 
-    
+            <!-- Add Product Modal -->
+            <div id="product-modal" class="modal">
+                <div class="modal-content">
+
+
+                    <h2>Product Details</h2>
+                    <form id="productForm">
+                        <div class="form-group">
+                            <div class="form-field">
+                                <label for="title">Book Title</label>
+                                <input type="text" id="title" name="title" required>
+                              </div>
+                    
+                              <div class="form-field">
+                                <label for="author">Author</label>
+                                <input type="text" id="author" name="author" required>
+                              </div>
+                    
+                              <div class="form-field" style="width: 100%;">
+                                <label for="description">Description</label>
+                                <textarea id="description" name="description"></textarea>
+                              </div>
+                    
+                              <div class="form-field">
+                                <label for="rate">Rating (1-5)</label>
+                                <input type="number" id="rate" name="rate" min="1" max="5" required>
+                              </div>
+                    
+                              <div class="form-field">
+                                <label for="genre">Genres (comma separated)</label>
+                                <input type="text" id="genre" name="genre" required>
+                              </div>
+                    
+                              <div class="form-field">
+                                <label for="publicationYear">Publication Year</label>
+                                <input type="number" id="publicationYear" name="publication_year" required>
+                              </div>
+                    
+                              <div class="form-field">
+                                <label for="price">Price</label>
+                                <input type="number" id="price" name="price" required>
+                              </div>
+                    
+                              <div class="form-field">
+                                <label for="mostPopular">Most Popular</label>
+                                <select id="mostPopular" name="most_popular">
+                                  <option value="false">Not Popular</option>
+                                  <option value="true">Most Popular</option>
+                                </select>
+                              </div>
+                            </div>
+                    
+                            <div class="form-right">
+                              <div class="gallery">
+                                <p>Upload Cover Image (URL)</p>
+                                <input type="url" id="coverImage" name="cover_image" placeholder="Image URL" required>
+                              </div>
+                            </div>
+                       
+                  
+                        <div class="buttons">
+                          <button type="button" class="delete" id="delete">Delete</button>
+                          <button type="submit" class="submit">Submit</button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    </div>
     <script src="layout.js"></script>
 </body>
+
 </html>
